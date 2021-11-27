@@ -8,13 +8,12 @@ import { useState } from "react"
 
 
 export const Layout = ({children}) => {
-    const [activeGallery, setActiveGallery] = useState(galleryData);
   const [activeImage, setActiveImage] = useState(undefined);
   const [MobileNav, setMobileNav] = useState(false);
     return (
         <div className={styles.layout}>
-          <Header setActiveGallery={setActiveGallery}/>
-          <main className={styles.content}>{React.cloneElement(children, { activeGallery, setActiveImage })}</main>
+          <Header />
+          <main className={styles.content}>{React.cloneElement(children, { setActiveImage })}</main>
           <Footer />  
         </div>
     )

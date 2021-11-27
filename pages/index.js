@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { galleryData } from '../data';
 
 export default function Home() {
-  const [activeGallery, setActiveGallery] = useState(galleryData);
   const [activeImage, setActiveImage] = useState(undefined);
   const [MobileNav, setMobileNav] = useState(false);
 
@@ -20,7 +19,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout
-        setActiveGallery={setActiveGallery}
         setActiveImage={setActiveImage}
         setMobileNav={setMobileNav}
       >

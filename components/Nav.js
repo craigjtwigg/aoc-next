@@ -7,19 +7,14 @@ export const Nav = ({setActiveGallery}) => {
     <nav>
       <ul className={styles.navUl}>
         <li className={styles.linkItem}>
-          <p
-            
-            onClick={(e) => setActiveGallery('editorial')}
-          >
+          <p>
             <Link href="/editorial">
             <a>EDITORIAL</a>
             </Link>
           </p>
         </li>
         <li className={styles.linkItem}>
-          <p
-            onClick={(e) => setActiveGallery('tv')}
-          >
+          <p>
             <Link href="/tv">
            <a> FILM & TELEVISION </a>
            </Link>
@@ -27,18 +22,14 @@ export const Nav = ({setActiveGallery}) => {
         </li>
         
         <li className={styles.linkItem}>
-          <p
-            onClick={(e) => setActiveGallery('celebrity')}
-          >
+          <p>
               <Link href="/celebrity">
             <a>CELEBRITY</a>
             </Link>
           </p>
         </li>
         <li className={styles.linkItem}>
-          <p
-            onClick={(e) => setActiveGallery('ecommerce')}
-          >
+          <p>
               <Link href="/commercial">
             <a>COMMERCIAL</a>
             </Link>
