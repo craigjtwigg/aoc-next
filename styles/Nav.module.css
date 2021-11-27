@@ -1,0 +1,17 @@
+.navUl {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linkItem {
+    margin: 0 1rem;
+}
+
+.linkItem:hover {
+    cursor: pointer;
+        text-decoration: underline;
+    text-decoration-thickness: 0.4rem;
+    text-decoration-color: rgb(255, 124, 1);
+}
