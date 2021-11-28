@@ -1,0 +1,74 @@
+.visible {
+  display: grid;
+  grid-template-areas:
+    'active details'
+    'active related';
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  width: 98%;
+  height: 100%;
+  padding: 2%;
+  background-color: rgb(248, 248, 248);
+  position: absolute;
+  z-index: 2;
+  gap: 2%;
+}
+
+.hidden {
+  display: none;
+}
+
+.activeImageWrapper {
+  grid-area: active;
+  display: relative;
+  height: inherit;
+  height: 100%;
+  overflow: scroll;
+}
+
+.activeImage {
+  width: auto;
+}
+
+.activeImageDetails {
+  font-size: 2rem;
+  margin-left: 20px;
+  grid-area: auto;
+}
+
+.photoset {
+  text-decoration: underline;
+  text-decoration-thickness: 0.4rem;
+  text-decoration-color: rgb(255, 124, 1);
+}
+
+.returnToGallery {
+  font-size: 1rem;
+}
+
+.returnToGallery:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 0rem;
+  text-decoration-color: rgb(255, 124, 1);
+}
+
+.relatedImages {
+  height: inherit;
+  overflow: scroll;
+}
+
+.thumbWrapper {
+  display: relative;
+  height: 100px;
+}
+
+.relatedImagesThumb {
+  margin: 5px;
+  filter: grayscale(1);
+}
+
+.relatedImagesThumb:hover {
+  cursor: pointer;
+  filter: none;
+}

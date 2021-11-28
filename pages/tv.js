@@ -1,8 +1,7 @@
 import { Gallery } from "../components/Gallery"
 import { Layout } from "../components/Layout"
 import { galleryData } from "../data"
-
-const tv = ({setActiveImage, setMobileNav}) => {
+export default function tv({setActiveImage, setMobileNav}) {
     let tvGallery = galleryData.filter((item) => item.category === 'tv')
     return (
        <Layout
@@ -13,5 +12,3 @@ const tv = ({setActiveImage, setMobileNav}) => {
       </Layout>
     )
 }
-
-export default tv
