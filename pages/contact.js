@@ -1,8 +1,12 @@
+import ContactForm from "../components/ContactForm"
+import { Layout } from "../components/Layout"
 
-export const contact = () => {
+const contact = () => {
     return (
-        <div>
-            
-        </div>
+        <Layout>
+            {<ContactForm />}
+        </ Layout>
     )
 }
+
+export default contact

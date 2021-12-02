@@ -18,15 +18,11 @@ export default function Home({ setActiveImage, activeImage}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-         {activeImage ? ( <ImageView activeImage={activeImage} setActiveImage={setActiveImage} /> ) : <p>no</p>}
+         {activeImage ? ( <ImageView activeImage={activeImage} setActiveImage={setActiveImage} /> ) : null}
       
-      <Layout
-        activeImage={activeImage}
-        setActiveImage={setActiveImage}
-        //setMobileNav={setMobileNav}
-      >
+    
         {<Landing />}
-      </Layout>
+      
     </div>
   );
 }

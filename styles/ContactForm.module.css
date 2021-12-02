@@ -1,0 +1,48 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 5vw;
+    gap: 2rem;
+    text-align: center;
+}
+
+.nameAndEmail {
+    display: flex;
+    align-items: center;
+
+}
+
+.messageAndSubmit {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 516px;
+    align-items: center;
+}
+
+.contactHeader {
+    font-size: 32px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.textField {
+    margin: 1rem;
+}
+
+.submitButton {
+    width: 20vw;
+    margin: 2vw 0;
+    padding: 3vw 0;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+}

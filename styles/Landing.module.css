@@ -1,0 +1,83 @@
+.container {
+  min-height: 100vh;
+  min-width: 100%;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.subContainer {
+  display: flex;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+  width: 80%;
+margin: auto;
+}
+
+.card {
+  display: flex;
+  cursor: pointer;
+}
+
+.cardLink{
+  display: flex;
+}
+
+.titleWrap {
+  align-items: center;
+  padding: 10px;
+}
+
+.title {
+  writing-mode: vertical-lr;
+  letter-spacing: 35px;
+  justify-self: center;
+  padding-right: 5px;
+  text-transform: uppercase;
+}
+
+.title:hover {
+  background-color: lawngreen;
+}
+
+.cardImage {
+  display: none;
+}
+
+.imageWrap {
+  min-height: 100%;
+  width: 10vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.vertical {
+  writing-mode: vertical-lr;
+  font-size: 3.5rem;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content;
+  position: absolute;
+  top: 30vh;
+  right: -1rem;
+}
+
+
+.tabWrapper {
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.tabWrapper:hover {
+  background-color: white;
+  color: black;
+}

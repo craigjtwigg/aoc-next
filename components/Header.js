@@ -6,7 +6,7 @@ import styles from '../styles/Header.module.css'
 export const Header = ({setActiveGallery}) => {
   return (
     <div className={styles.header}>
-      <Logo />
+      <Logo orientation='horizontal'/>
       <DesktopNav setActiveGallery={setActiveGallery}/>
      
     </div>
