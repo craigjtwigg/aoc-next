@@ -81,3 +81,10 @@ margin: auto;
   background-color: white;
   color: black;
 }
+
+@media only screen and (max-width: 800px) {
+  .container {
+    transform: rotate(270deg);
+  }
+  
+}

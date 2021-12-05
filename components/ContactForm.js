@@ -2,12 +2,14 @@ import { TextField } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import styles from '../styles/ContactForm.module.css';
+import EmailError from './EmailError';
+
 
 const ContactForm = () => {
   const [userEmail, setUserEmail] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isSent, setIsSent] = useState(false);
-
+  const [showError, setShowError] = useState(false)
   const form = useRef();
   const validEmail = /\S+@\S+\.\S+/;
 
@@ -26,7 +28,7 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     if (!isValidEmail) {
-      console.log('Error. Invalid e-mail address.');
+      setShowError(true)
     } else
       emailjs
         .sendForm(
@@ -46,9 +48,12 @@ const ContactForm = () => {
         );
   };
 
+
+
   return (
     isSent ? <ThankYouMessage /> : 
-    <div className={styles.container}>
+    <section className={styles.container}>
+      {showError ? <EmailError setShowError={setShowError}/> : null }
       <div className={styles.contactInfo}>
         Fill in the contact form and press submit, Alex will get back to you
         ASAP!
@@ -62,7 +67,7 @@ const ContactForm = () => {
             id="outlined-basic"
             label="Your Name"
             variant="outlined"
-            color="warning"
+            color="success"
             sx={{
               margin: 1,
             }}
@@ -76,7 +81,7 @@ const ContactForm = () => {
             id="outlined-basic"
             label="Your Email"
             variant="outlined"
-            color={isValidEmail ? 'warning' : 'error'}
+            color={isValidEmail ? 'success' : 'error'}
             sx={{
               margin: 1,
             }}
@@ -91,7 +96,7 @@ const ContactForm = () => {
             label="Message"
             multiline
             rows={6}
-            color="warning"
+            color='success'
             sx={{
               margin: 1,
             }}
@@ -102,7 +107,7 @@ const ContactForm = () => {
           </button>{' '}
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

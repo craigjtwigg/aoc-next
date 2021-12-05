@@ -1,0 +1,41 @@
+.container {
+    background-color: rgba(255, 255, 255, 0.733);
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 99;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    margin-top: 0.5rem;
+    width: fit-content;
+    cursor: pointer;
+    align-self: center;
+    padding: 1rem;
+    background-color: white;
+    color: black;
+    border: black solid 1px;
+}
+
+.emailError {
+    display: flex;
+    position: absolute;
+    left: 20vw;
+    background-color: white;
+    flex-direction: column;
+    width: 60vw;
+    z-index: 100;
+    margin: auto;
+    border: black solid 1px;
+    padding: 5vw;
+    justify-content: center;
+}
+
+.oops {
+    font-weight: bolder;
+    font-size: 1.4rem;
+}

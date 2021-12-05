@@ -1,12 +1,12 @@
 import { ImageList, ImageListItem } from '@mui/material';
-import { galleryData } from '../data';
 import Image from 'next/image';
 import styles from '../styles/Gallery.module.css';
 import Link from 'next/link';
 
 export const Gallery = (props) => {
+
   return (
-    <div className={styles.gallery}>
+    <section className={styles.gallery}>
       <ImageList variant="masonry" cols={3} gap={10}>
         {props.activeGallery.map((item) => (
           <Link href="/" key={`View${item.id}`}>
@@ -22,10 +22,13 @@ export const Gallery = (props) => {
                     height: 'auto',
                   }}
                 >
+                  {console.log(item.imgSrc.naturalHeight)}
                   <Image
                     src={item.imgSrc}
                     alt={item.alt}
-                    objectFit="contain"
+                    width={item.imgSrc.naturalWidth}
+                    height={item.imgSrc.naturalHeight}
+                    layout='responsive'
                     quality="80"
                     placeholder="blur"
                     blurDataURL={item.blurSrc ? item.blurSrc : undefined}
@@ -36,6 +39,6 @@ export const Gallery = (props) => {
           </Link>
         ))}
       </ImageList>
-    </div>
+    </section>
   );
 };
