@@ -1,5 +1,4 @@
 import React from 'react';
-import { CloseIcon } from '@mui/icons-material';
 import Image from 'next/image';
 import { galleryData } from '../data';
 import styles from '../styles/ImageView.module.css';

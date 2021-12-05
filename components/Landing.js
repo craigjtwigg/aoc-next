@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from '../styles/Landing.module.css';
 import CelebImg from '../public/assets/celebrity/kiri_pritchard_mcclean_03.jpg';
 import EditorialImg from '../public/assets/editorial/NO FUTURE MAGAZINE/no_future_02.jpg';
