@@ -35,6 +35,8 @@
   .mobileNavBurger {
     display: block;
     align-self: center;
+    height: 24px;
+    width: 24px;
   }
 
   .navUl {

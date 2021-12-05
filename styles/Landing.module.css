@@ -1,6 +1,10 @@
+.containerMobile {
+  display: none;
+}
+
 .container {
   min-height: 100vh;
-  min-width: 100%;
+  min-width: 100vw;
    display: flex;
   align-items: center;
   justify-content: center;
@@ -25,6 +29,10 @@ margin: auto;
   display: flex;
 }
 
+.cardLinkMobile {
+  display: none;
+}
+
 .titleWrap {
   align-items: center;
   padding: 10px;
@@ -43,7 +51,7 @@ margin: auto;
 }
 
 .cardImage {
-  display: none;
+  
 }
 
 .imageWrap {
@@ -84,50 +92,79 @@ margin: auto;
 
 @media only screen and (max-width: 650px) {
   .container {
-    margin: 20px;
-    min-height: 97vh;
-  min-width: 100%;
-    transform: rotate(180deg);
-  }
-
-  .subContainer {
-    margin: auto;
-    
-    gap: 0px;
-    height: 97vh;
-  }
-  
-  .imageWrap {
     display: none;
   }
 
+  .containerMobile {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 100vh;
+    border: black solid 1px;
+    justify-content: space-between;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-.titleWrap {
-  align-items: center;
-  padding: 0px
+  .subContainerMobile {
+    text-align: center;
+  }
+
+.cardLink{
+  display: none;
+}
+
+.cardLinkMobile {
+display: flex;
+
+}
+
+.cardImageMobile {
+  max-height: 50vh;
+  
+}
+
+.titleMobile {
+  background-color: lawngreen;
+  position: absolute;
+  z-index: 2;
+  left: 10vw;
+  font-size: 3vw;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+  .imageWrapMobile {
+  width: 100%;
+  left: 0vw;  
+  height: 20vh;
+  overflow: hidden;
 }
 
 .tabs {
-  
-  top: 10px;
-  left: 20px;
-  gap: 0px;
- 
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: fit-content;
+  position: absolute;
+  top: 91vh;
+  right: 30vw;
 }
 
 
 .tabWrapper {
-  background-color: rgb(248, 248, 248);
-  color: rgb(34, 34, 34);
+  background-color: black;
+  color: white;
   display: flex;
+  margin-top: 8px;
   padding: 1rem;
   padding-right: 1rem;
-  border-radius: 50%;
 }
 
 .tabWrapper:hover {
-  background-color: rgb(248, 248, 248);
-  color: rgb(34, 34, 34);
+  background-color: white;
+  color: black;
 }
+
 
 }
