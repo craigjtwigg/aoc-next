@@ -5,12 +5,12 @@ export const DesktopNav = ({drawerActive, setDrawerActive, setActiveGallery}) =>
   return (
     <>
       <Nav class={styles.desktopNav} drawerActive={drawerActive} setDrawerActive={setDrawerActive} setActiveGallery={setActiveGallery}/>
-      <FilterList
+      <div className={styles.mobileNavBurger}>
+              <FilterList
           onClick={() => setDrawerActive(true)}
-          className={
-           styles.mobileNavBurger
-          }
         />
+      </div>
+
     </>
   );
 };

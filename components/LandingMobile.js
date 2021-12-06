@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from '../styles/Landing.module.css';
-import CelebImg from '../public/assets/celebrity/kiri_pritchard_mcclean_03.jpg';
-import EditorialImg from '../public/assets/editorial/NO FUTURE MAGAZINE/no_future_02.jpg';
-import FilmAndTVImg from '../public/assets/tv/live_at_aberyswyth_pier_11.jpg';
-import CommercialImgMobile from '../public/assets/commercial/KOI FOOTWEAR/koi_footwear_01.jpg'
-import CommercialImg from '../public/assets/commercial/oxfam_01.jpg';
+import CelebImg from '../public/assets/mobilebanners/celeb.jpg';
+import EditorialImg from '../public/assets/mobilebanners/editorial.jpg';
+import FilmAndTVImg from '../public/assets/mobilebanners/tv.jpg';
+import CommercialImgMobile from '../public/assets/mobilebanners/commercial.jpg'
+import CommercialImg from '../public/assets/mobilebanners/commercial.jpg';
 import LandingCard from './LandingCard';
 import { InstaTab, EmailTab } from './Tab';
 

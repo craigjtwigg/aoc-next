@@ -90,7 +90,7 @@ margin: auto;
   color: black;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 650px){
   .container {
     display: none;
   }
@@ -100,7 +100,6 @@ margin: auto;
     flex-direction: column;
     width: 90vw;
     height: 100vh;
-    border: black solid 1px;
     justify-content: space-between;
     margin: 0 auto;
     overflow: hidden;
@@ -153,12 +152,97 @@ display: flex;
 
 
 .tabWrapper {
+  background-color: transparent;
+  color:  black;
+  display: flex;
+  margin-top: 8px;
+  padding: 1rem;
+  padding-right: 1rem;
+}
+
+.tabWrapper:hover {
+  background-color: white;
+  color: black;
+}
+
+
+}
+
+@media only screen and (max-height: 380px){
+  .container {
+    display: none;
+  }
+
+  .containerMobile {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 90vh;
+    align-items: flex-start;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .subContainerMobile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
+  }
+
+  .nameMobile {
+    min-width: 100vw;
+  }
+
+.cardLink{
+  display: none;
+}
+
+.cardLinkMobile {
+display: block;
+width: 23vw;
+height: 15vw;
+overflow: hidden;
+}
+
+
+.titleMobile {
+  background-color: lawngreen;
+  position: absolute;
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.3rem;
+    
+}
+
+  .imageWrapMobile {
+  max-width: 25vw;
+  min-height: 70vh;
+  left: 0vw;  
+  height: 70vh;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: fit-content;
+  position: absolute;
+  top: 78vh;
+  right: 30vw;
+}
+
+
+.tabWrapper {
   background-color: black;
   color: white;
   display: flex;
   margin-top: 8px;
   padding: 1rem;
   padding-right: 1rem;
+  transform: scale(0.7);
 }
 
 .tabWrapper:hover {

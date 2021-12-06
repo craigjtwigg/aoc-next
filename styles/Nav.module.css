@@ -40,16 +40,17 @@
   }
 
   .navUl {
-      margin-top: 3rem;
+      margin-top: 4rem;
     display: flex;
     flex-direction: column;
     list-style: none;
-    align-items: center;
-    justify-content: space-around;
-   
-    min-width: 100%;
-    min-height: 90vh;
-    font-size: 1.6rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    letter-spacing: 2.5vw;
+    min-width: 100vw;
+    min-height: 80vh;
+
+    font-size: 4vw;
   }
 
   .hidden {

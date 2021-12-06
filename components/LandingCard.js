@@ -18,6 +18,8 @@ const LandingCard = (props) => {
             <Image
               src={props.cardImage}
               alt={`${props.category} work`}
+              width='200'
+              height='800'
               layout="fill"
               objectFit="cover"
               quality="100"
@@ -49,6 +51,8 @@ export const LandingCardMobile = (props) => {
               layout="intrinsic"
               objectFit="cover"
               quality="100"
+              width='500'
+              height='500'
               placeholder="blur"
               className={styles.cardImageMobile}
             />

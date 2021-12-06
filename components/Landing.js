@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../styles/Landing.module.css';
-import CelebImg from '../public/assets/celebrity/kiri_pritchard_mcclean_03.jpg';
-import EditorialImg from '../public/assets/editorial/NO FUTURE MAGAZINE/no_future_02.jpg';
-import FilmAndTVImg from '../public/assets/tv/live_at_aberyswyth_pier_11.jpg';
-import CommercialImg from '../public/assets/commercial/oxfam_01.jpg';
+import CelebImg from '../public/assets/desktopbanners/celeb.png'
+import EditorialImg from '../public/assets/desktopbanners/editorial.png';
+import FilmAndTVImg from '../public/assets/desktopbanners/tv.png';
+import CommercialImg from '../public/assets/desktopbanners/commercial.png';
 import CommercialImgMobile from '../public/assets/commercial/KOI FOOTWEAR/koi_footwear_02.jpg'
 import LandingCard from './LandingCard';
 import LandingMobile from './LandingMobile';
