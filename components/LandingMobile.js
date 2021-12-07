@@ -23,7 +23,7 @@ const LandingMobile = (props) => {
       </div>
  
 </div>
-<div className={styles.tabs}>
+<div className={styles.tabsMobile}>
   <EmailTab />
   <InstaTab />
 </div>
