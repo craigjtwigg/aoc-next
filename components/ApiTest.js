@@ -2,29 +2,11 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import DefaultImage from '../public/assets/celebrity/POLO/polo_01.jpg';
 
-export const ApiTest = () => {
-  var requestOptions = {
-    method: 'GET',
-    redirect: 'follow',
-  };
+export const ApiTest = ({cmsData}) => {
 
-  const [galleryData, setGalleryData] = useState(null);
 
-  useEffect(() => {
-    fetch(
-      'http://localhost:1337/api/photo-sets?populate[images][fields]=url,width,height',
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setGalleryData(result.data);
-      })
-      .catch((error) => console.log('error', error));
-    return () => {};
-  }, []);
-
-  return (galleryData ? (
-    galleryData.map((album) => {
+  return (cmsData ? (
+    cmsData.map((album) => {
       let albumName = album.attributes.name;
       let albumDescription = album.attributes.description;
       let albumCredit = album.attributes.credit;
@@ -36,7 +18,7 @@ export const ApiTest = () => {
             alt={albumDescription}
             width={item.attributes.width}
             height={item.attributes.height}
-            layout="responsive"
+            layout="intrinsic"
             data-credit={albumCredit}
             data-category={albumCategory}
             data-photoset={albumName}
