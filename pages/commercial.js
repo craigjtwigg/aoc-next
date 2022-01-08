@@ -3,8 +3,9 @@ import { Layout } from "../components/Layout"
 import { Gallery } from "../components/Gallery"
 import { galleryData } from "../data"
 
-const commercial = ({setActiveImage, setMobileNav}) => {
-    let commercialGallery = galleryData.filter((item) => item.category === 'commercial')
+const commercial = ({photos, setActiveImage, setMobileNav}) => {
+    let commercialGallery = photos.filter((item) => item.photoset.nodes[0].category[0] === 'commercial')
+    
     return (
       <>
               <Head>
@@ -28,5 +29,53 @@ const commercial = ({setActiveImage, setMobileNav}) => {
     )
     
 }
+
+export async function getStaticProps() {
+  
+
+  const res = await fetch('https://aoc-wp.onrender.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      query: `
+        {
+          photos(first: 5000) {
+            nodes {
+              ...PhotoFields
+            }
+          }
+        }
+
+        fragment PhotoFields on Photo {
+          image {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+          photoset {
+            nodes {
+              category
+              description
+              name
+              credit
+            }
+          }
+        }
+
+      `
+    })
+  })
+
+  const json = await res.json()
+
+  return {
+    props: {
+      photos: json.data.photos.nodes,
+    },
+  }
+}
+
 
 export default commercial

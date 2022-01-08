@@ -3,8 +3,8 @@ import { Layout } from "../components/Layout"
 import { Gallery } from "../components/Gallery"
 import { galleryData } from "../data"
 
-const celebrity = ({setActiveImage, setMobileNav}) => {
-    let celebrityGallery = galleryData.filter((item) => item.category === 'celebrity')
+const celebrity = ({photos, setActiveImage, setMobileNav}) => {
+    let celebrityGallery = photos.filter((item) => item.photoset.nodes[0].category[0] === 'celebrity')
     return (
       <>
                     <Head>
@@ -26,6 +26,53 @@ const celebrity = ({setActiveImage, setMobileNav}) => {
       </Layout>
       </>
     )
+}
+
+export async function getStaticProps() {
+  
+
+  const res = await fetch('https://aoc-wp.onrender.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      query: `
+        {
+          photos(first: 5000) {
+            nodes {
+              ...PhotoFields
+            }
+          }
+        }
+
+        fragment PhotoFields on Photo {
+          image {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+          photoset {
+            nodes {
+              category
+              description
+              name
+              credit
+            }
+          }
+        }
+
+      `
+    })
+  })
+
+  const json = await res.json()
+
+  return {
+    props: {
+      photos: json.data.photos.nodes,
+    },
+  }
 }
 
 export default celebrity

@@ -9,9 +9,9 @@ export const Gallery = (props) => {
     <section className={styles.gallery}>
       <ImageList variant="masonry" cols={3} gap={10}>
         {props.activeGallery.map((item) => (
-          <Link href="/" key={`View${item.id}`}>
+          <Link href="/" key={`View${item.image.mediaItemUrl}`}>
             <a>
-              <ImageListItem key={item.id}>
+              <ImageListItem key={item.image.mediaItemUrl}>
                 <div
                   className={styles.galleryItem}
                   onClick={() => props.setActiveImage(item)}
@@ -22,16 +22,15 @@ export const Gallery = (props) => {
                     height: 'auto',
                   }}
                 >
-                  {console.log(item.imgSrc.naturalHeight)}
                   <Image
-                    src={item.imgSrc}
-                    alt={item.alt}
-                    width={item.imgSrc.naturalWidth}
-                    height={item.imgSrc.naturalHeight}
-                    layout='responsive'
+                    src={item.image.mediaItemUrl}
+                    alt={item.photoset.nodes[0].description}
+                    width={item.image.mediaDetails.width}
+                    height={item.image.mediaDetails.height}
+                    layout='intrinsic'
                     quality="80"
                     placeholder="blur"
-                    blurDataURL={item.blurSrc ? item.blurSrc : undefined}
+                    blurDataURL= 'undefined'
                   />
                 </div>
               </ImageListItem>

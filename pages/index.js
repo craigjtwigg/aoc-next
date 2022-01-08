@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import { ImageView } from '../components/ImageView'
 import { Landing } from '../components/Landing';
 
-export default function Home({ setActiveImage, activeImage}) {
+export default function Home({ photos, setActiveImage, activeImage}) {
 
   return (
     <div className={styles.container}>
@@ -19,11 +19,58 @@ export default function Home({ setActiveImage, activeImage}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-         {activeImage ? ( <ImageView activeImage={activeImage} setActiveImage={setActiveImage} /> ) : null}
+         {activeImage ? ( <ImageView photos = {photos} activeImage={activeImage} setActiveImage={setActiveImage} /> ) : null}
       
     
         {<Landing />}
       
     </div>
   );
+}
+
+export async function getStaticProps() {
+  
+
+  const res = await fetch('https://aoc-wp.onrender.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      query: `
+        {
+          photos(first: 5000) {
+            nodes {
+              ...PhotoFields
+            }
+          }
+        }
+
+        fragment PhotoFields on Photo {
+          image {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+          photoset {
+            nodes {
+              category
+              description
+              name
+              credit
+            }
+          }
+        }
+
+      `
+    })
+  })
+
+  const json = await res.json()
+
+  return {
+    props: {
+      photos: json.data.photos.nodes,
+    },
+  }
 }

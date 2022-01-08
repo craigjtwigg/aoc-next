@@ -3,8 +3,10 @@ import { Gallery } from "../components/Gallery"
 import { Layout } from "../components/Layout"
 import { galleryData } from "../data"
 
-const editorial = ({setActiveImage, setMobileNav}) => {
-    let editorialGallery = galleryData.filter((item) => item.category === 'editorial')
+
+const editorial = ({photos, setActiveImage, setMobileNav}) => {
+    let editorialGallery = photos.filter((item) => item.photoset.nodes[0].category[0] === 'editorial')
+    //editorialGallery = editorialGallery.sort(() => Math.random() - 0.5)
     return (
       <>
               <Head>
@@ -26,6 +28,53 @@ const editorial = ({setActiveImage, setMobileNav}) => {
       </Layout>
       </>
     )
+}
+
+export async function getStaticProps() {
+  
+
+  const res = await fetch('https://aoc-wp.onrender.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      query: `
+        {
+          photos(first: 5000) {
+            nodes {
+              ...PhotoFields
+            }
+          }
+        }
+
+        fragment PhotoFields on Photo {
+          image {
+            mediaItemUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+          photoset {
+            nodes {
+              category
+              description
+              name
+              credit
+            }
+          }
+        }
+
+      `
+    })
+  })
+
+  const json = await res.json()
+
+  return {
+    props: {
+      photos: json.data.photos.nodes,
+    },
+  }
 }
 
 export default editorial
