@@ -72,5 +72,6 @@ export async function getStaticProps() {
     props: {
       photos: json.data.photos.nodes,
     },
+    revalidate: 1,
   }
 }

@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { Layout } from "../components/Layout"
 import { Gallery } from "../components/Gallery"
-import { galleryData } from "../data"
+
 
 const commercial = ({photos, setActiveImage, setMobileNav}) => {
     let commercialGallery = photos.filter((item) => item.photoset.nodes[0].category[0] === 'commercial')
@@ -74,6 +74,7 @@ export async function getStaticProps() {
     props: {
       photos: json.data.photos.nodes,
     },
+    revalidate: 1,
   }
 }
 

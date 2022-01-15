@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { galleryData } from '../data';
 import styles from '../styles/ImageView.module.css';
 import { ImageList, ImageListItem } from '@mui/material';
 import Link from 'next/link';

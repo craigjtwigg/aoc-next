@@ -1,6 +1,5 @@
 import { Logo } from './Logo';
 import { DesktopNav } from './DesktopNav';
-import { FilterList, Close } from '@mui/icons-material';
 import styles from '../styles/Header.module.css'
 
 export const Header = ({drawerActive, setDrawerActive, setActiveGallery}) => {

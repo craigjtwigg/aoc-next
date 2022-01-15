@@ -6,7 +6,7 @@ import Link from 'next/link';
 const LandingCard = (props) => {
   return (
     <>
-    <LandingCardMobile mobileImage={props.mobileImage} link={props.link} category={props.category} cardImage={props.cardImage}/>
+    <LandingCardMobile mobileImage={props.cardImage} link={props.link} category={props.category} cardImage={props.cardImage}/>
     <Link href={props.link}>
       <a className={styles.cardLink}>
         <div className={styles.card}>
@@ -18,8 +18,8 @@ const LandingCard = (props) => {
             <Image
               src={props.cardImage}
               alt={`${props.category} work`}
-              width='200'
-              height='800'
+             // width='200'
+             // height='800'
               layout="fill"
               objectFit="cover"
               quality="100"

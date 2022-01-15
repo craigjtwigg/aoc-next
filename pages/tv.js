@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Gallery } from "../components/Gallery"
 import { Layout } from "../components/Layout"
-import { galleryData } from "../data"
+
 
 export default function tv({photos, setActiveImage, setMobileNav}) {
     let tvGallery = photos.filter((item) => item.photoset.nodes[0].category[0] === 'tv')
@@ -74,5 +74,6 @@ export async function getStaticProps() {
     props: {
       photos: json.data.photos.nodes,
     },
+    revalidate: 1,
   }
 }
